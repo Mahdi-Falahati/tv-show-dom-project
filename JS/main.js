@@ -30,7 +30,7 @@ const showData = (response) => {
             <div class="card__inf-seri">
                 <span>S${movie.season <= 9 ? (movie.season = `0${movie.season}`) : (movie.season = movie.season)}</span>
                 /
-                <span>E${movie.season <= 9 ? (movie.season = `0${movie.season}`) : (movie.season = movie.season)}</span>
+                <span>E${movie.number <= 9 ? (movie.number = `0${movie.number}`) : (movie.number = movie.number)}</span>
             </div>
             <div class="card__inf-imdb">
                 <span>IMDB ${movie.rating.average}</span>
