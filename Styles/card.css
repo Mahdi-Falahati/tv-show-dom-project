@@ -25,6 +25,7 @@
 }
 
 .card__name{
+    text-align: center;
     font-size: 17px;
     letter-spacing: 2px;
     padding-bottom: 6px;
@@ -58,8 +59,18 @@
 
 .card__airdate{
     margin-top: 10px;
-    text-align: center;
+    text-align: left;
     font-style: italic;
     letter-spacing: 1px;
     color: #333;
+}
+
+.card__link{
+    font-style: italic;
+    font-size: 14px;
+    margin-top: 10px;
+    display: block;
+    color: #333;
+    text-align: right;
+    text-decoration: none;
 }
