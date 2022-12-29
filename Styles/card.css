@@ -1,46 +1,40 @@
-.cards{
+.cards {
     display: flex;
     justify-content: space-around;
     flex-wrap: wrap;
 }
 
-.card{
+.card {
     margin: 25px 15px;
-    width: 300px;
+    width: 320px;
     border-radius: 20px;
-    box-shadow:0px 0px 10px #888;
+    box-shadow: 0px 0px 10px #888;
     background-color: #fff;
     padding: 10px;
+    position: relative;
 }
 
-.card__content{
+.card__content {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.card__img{
+.card__img {
     border-radius: 10px;
     width: 90%;
 }
 
-.card__name{
+.card__name {
     text-align: center;
     font-size: 17px;
-    letter-spacing: 2px;
+    letter-spacing: 1px;
     padding-bottom: 6px;
     margin-bottom: 10px;
     border-bottom: 1px solid #ff5c04;
 }
 
-.card__summary{
-    margin: 6px;
-    line-height: 1.25;
-    padding: 0px 6px;
-    text-align: justify;
-}
-
-.card__info{
+.card__info {
     width: 100%;
     margin: 6px;
     font-size: 12px;
@@ -50,22 +44,23 @@
     align-items: center;
 }
 
-.card__inf-seri,.card__inf-imdb{
+.card__inf-seri,
+.card__inf-imdb {
     text-align: center;
     padding: 2px;
     letter-spacing: 1px;
     border-bottom: 1px dotted #150042;
 }
 
-.card__airdate{
+.card__airdate {
     margin-top: 10px;
-    text-align: left;
     font-style: italic;
+    text-align: center;
     letter-spacing: 1px;
     color: #333;
 }
 
-.card__link{
+.card__link {
     font-style: italic;
     font-size: 14px;
     margin-top: 10px;
@@ -73,4 +68,33 @@
     color: #333;
     text-align: right;
     text-decoration: none;
+}
+
+.card__summary {
+    position: absolute;
+    margin: 6px;
+    line-height: 1.25;
+    padding: 0px 6px;
+    text-align: justify;
+    transform: scale(0, 0);
+    transition: all .7s; 
+}
+
+.card__summary{
+    font-size: 16px;
+}
+
+.card__content:hover>.card__summary {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    top: 0%;
+    left: 0%;
+    right: 0%;
+    bottom: 0%;
+    border-radius: 20px;
+    transform: scale(1, 1);
+    background: rgba(254, 254, 254, 0.779);
 }

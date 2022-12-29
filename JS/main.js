@@ -17,6 +17,13 @@ const showData = (response) => {
         const card = `
 <section class="card">
     <div class="card__content">
+    <section class="card__summary">
+            <span>Summary : </span>
+            ${movie.summary}
+            <a href="${movie.url}" class="card__link" target="_blank">
+                    Play Move..
+                </a>
+    </section>
     <h1 class="card__name">${movie.name}</h1>
         <img class="card__img" src="${movie.image.medium}" alt="${movie.name}" title="${movie.name}">
         <section class="card__info">
@@ -29,16 +36,9 @@ const showData = (response) => {
                 <span>IMDB ${movie.rating.average}</span>
             </div>
         </section>
-        <details class="card__summary">
-            <summary>Summary...</summary>
-            ${movie.summary}
-        </details>
     </div>
     <hr>
     <div class="card__airdate"> Airdate ${movie.airdate}</div>
-    <a href="${movie.url}" class="card__link" target="_blank">
-            Play Move..
-        </a>
 </section>
     `;
         // added card as html to page 
