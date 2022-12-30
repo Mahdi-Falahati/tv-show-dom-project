@@ -1,0 +1,23 @@
+header{
+    height: 65px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10px;
+}
+
+nav{
+    width: 90%;
+    height: 65px;
+    border-bottom: 1px solid #999;
+    text-align: center;
+    line-height: 50px;
+}
+
+#search{
+    outline: none;
+    border: none;
+    text-align: center;
+    border-bottom: 1px solid orangered;
+    width: 220px;
+}

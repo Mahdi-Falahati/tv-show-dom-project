@@ -99,3 +99,11 @@
     transform: scale(1, 1);
     background: rgba(254, 254, 254, 0.779);
 }
+
+.hide{
+    display: none;
+}
+
+.active{
+    display: inline-block;
+}
