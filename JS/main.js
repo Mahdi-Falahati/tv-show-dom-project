@@ -1,12 +1,21 @@
 // get spiner loader tag
 const spiner = document.querySelector(".loaderSection");
+const error = document.querySelector(".error");
+let errorValidtion = false;
 // event listener for after loaded page fetching to api
 document.addEventListener("DOMContentLoaded", async () => {
     const promiseOfSomeData = await fetch("https://api.tvmaze.com/shows/82/episodes")
         .then((response) => response.json())
         .then((data) => data)
-
+        .catch((er) => {
+            errorValidtion = true;
+            let contentError = error.querySelector(".contentError");
+            contentError.textContent = er;
+        });
     setTimeout(() => {
+        if (errorValidtion) {
+            error.classList.replace("hide", "active");
+        }
         spiner.classList = "hide";
         // get data from api
 
