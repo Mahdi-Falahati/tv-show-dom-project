@@ -1,11 +1,17 @@
+// get spiner loader tag
+const spiner = document.querySelector(".loaderSection");
 // event listener for after loaded page fetching to api
 document.addEventListener("DOMContentLoaded", async () => {
-    // get data from api
     const promiseOfSomeData = await fetch("https://api.tvmaze.com/shows/82/episodes")
         .then((response) => response.json())
-        .then((data) => data);
+        .then((data) => data)
 
-    showData(promiseOfSomeData);
+    setTimeout(() => {
+        spiner.classList = "hide";
+        // get data from api
+
+        showData(promiseOfSomeData);
+    }, 1000);
 });
 // collection of movies
 let Movies = [];
