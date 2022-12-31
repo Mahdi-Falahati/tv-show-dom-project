@@ -1,17 +1,21 @@
 header{
-    height: 65px;
+    padding: 15px 0px;
     display: flex;
     justify-content: center;
     align-items: center;
-    margin: 10px;
 }
 
 nav{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
     width: 90%;
-    height: 65px;
     border-bottom: 1px solid #999;
     text-align: center;
     line-height: 50px;
+    padding: 15px 0px;
 }
 
 #search{
@@ -20,4 +24,15 @@ nav{
     text-align: center;
     border-bottom: 1px solid orangered;
     width: 220px;
+    margin: 10px 10px;
+}
+
+nav select{
+    text-align: center;
+    outline: none;
+    border: none;
+    padding: 3px;
+    border-radius: 6px;
+    box-shadow: 1px 2px 7px #ababab;
+    border: 1px dotted #b8b8b8;
 }

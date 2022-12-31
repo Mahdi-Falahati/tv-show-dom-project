@@ -12,6 +12,9 @@ let Movies = [];
 
 // get tag with class cards
 const cards = document.querySelector(".cards");
+// get tag with id select
+const select = document.getElementById("episode-select");
+
 const showData = (response) => {
     // show respone in page
     Movies = response.map((movie) => {
@@ -44,6 +47,15 @@ const showData = (response) => {
                 <div class="card__airdate"> Airdate ${airdate}</div>
          </section>
         `;
+
+        // create option element
+        const option = document.createElement("option");
+        // assignment value to option element
+        option.value = "Id" + id;
+        option.textContent = `S${season} E${number} - ${name}`;
+        // add option as child to select
+        select.appendChild(option);
+
         // added card as html to page
         cards.innerHTML += card;
         return {
@@ -73,6 +85,23 @@ search.addEventListener("input", (e) => {
             let id = "#Id" + movie.id;
             const card = document.querySelector(id);
             card.classList.replace("hide", "active");
+        }
+    });
+});
+
+select.addEventListener("change", (e) => {
+    const card = document.querySelectorAll(".card");
+    card.forEach((movie) => {
+        if (e.target.value == "all") {
+            movie.classList += " active";
+        } else {
+            // add class hide to other select card
+            movie.classList += " hide";
+            movie.classList.replace("active", "hide");
+            // add class active to target card for show
+            if (movie.id == e.target.value) {
+                movie.classList.replace("hide", "active");
+            }
         }
     });
 });
