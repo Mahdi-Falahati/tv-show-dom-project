@@ -104,14 +104,20 @@ search.addEventListener("input", (e) => {
     });
 });
 
+// select input
 select.addEventListener("change", (e) => {
     const card = document.querySelectorAll(".card");
     card.forEach((movie) => {
         if (e.target.value == "all") {
-            movie.classList += " active";
+            if (!movie.classList.value.includes("hide")) {
+                movie.classList += " active";
+            }
+            movie.classList.replace("hide", "active");
         } else {
             // add class hide to other select card
-            movie.classList += " hide";
+            if (!movie.classList.value.includes("hide")) {
+                movie.classList += " hide";
+            }
             movie.classList.replace("active", "hide");
             // add class active to target card for show
             if (movie.id == e.target.value) {
